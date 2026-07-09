@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Pattern Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-label="English Pattern Studio">
+        <img src="assets/speaking-practice-hero.png" alt="" class="hero__image" />
+        <div class="hero__shade"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Spoken English Practice</p>
+          <h1>English Pattern Studio</h1>
+          <p class="hero__copy">先掌握句型，再开口造句。用常用表达把日常交流说顺。</p>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="口语句型练习">
+        <aside class="pattern-list" aria-label="句型列表">
+          <div class="section-title">
+            <span>句型库</span>
+            <strong id="pattern-count">0</strong>
+          </div>
+          <div id="pattern-tabs" class="pattern-tabs"></div>
+        </aside>
+
+        <section class="study-panel" aria-live="polite">
+          <div class="pattern-card">
+            <div class="pattern-card__top">
+              <div>
+                <p class="label">Today's pattern</p>
+                <h2 id="pattern-title"></h2>
+              </div>
+              <button id="speak-pattern" class="icon-button" type="button" aria-label="朗读句型" title="朗读句型">
+                <span aria-hidden="true">▶</span>
+              </button>
+            </div>
+
+            <dl class="pattern-meta">
+              <div>
+                <dt>读音</dt>
+                <dd id="pattern-pronunciation"></dd>
+              </div>
+              <div>
+                <dt>意思</dt>
+                <dd id="pattern-meaning"></dd>
+              </div>
+              <div>
+                <dt>用法</dt>
+                <dd id="pattern-usage"></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="practice-card">
+            <div class="practice-head">
+              <div>
+                <p class="label">Practice</p>
+                <h3 id="prompt-title"></h3>
+              </div>
+              <div class="progress-pill">
+                <span id="example-index">1</span>
+                <span>/</span>
+                <span id="example-total">5</span>
+              </div>
+            </div>
+
+            <div class="chinese-prompt" id="chinese-prompt"></div>
+
+            <div class="response-panel">
+              <div>
+                <p class="label">Your sentence</p>
+                <p id="transcript" class="transcript">等待语音输入</p>
+              </div>
+              <button id="record-button" class="record-button" type="button">
+                <span class="record-dot" aria-hidden="true"></span>
+                <span id="record-label">开始说</span>
+              </button>
+            </div>
+
+            <div id="feedback" class="feedback feedback--idle">说完后会显示识别结果和参考答案。</div>
+
+            <div id="answer-box" class="answer-box" hidden>
+              <div>
+                <p class="label">Reference answer</p>
+                <p id="answer-text" class="answer-text"></p>
+              </div>
+              <button id="speak-answer" class="icon-button icon-button--dark" type="button" aria-label="朗读答案" title="朗读答案">
+                <span aria-hidden="true">▶</span>
+              </button>
+            </div>
+
+            <div class="controls">
+              <button id="prev-example" class="secondary-button" type="button">上一句</button>
+              <button id="show-answer" class="secondary-button" type="button">显示答案</button>
+              <button id="next-example" class="primary-button" type="button">下一句</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
